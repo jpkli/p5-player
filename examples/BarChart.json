@@ -1,0 +1,21 @@
+{
+  "data": "SyntheticBabies",
+  "operations": [
+    {
+      "$aggregate": {
+        "$group": "MotherRace",
+        "$reduce": {
+          "BabyCount": {"$count": "*"}
+        }
+      }
+    },
+    {
+      "$visualize": {
+        "mark": "bar",
+        "height": "BabyCount",
+        "color": "steelblue",
+        "x": "MotherRace"
+      }
+    }
+  ]
+}
