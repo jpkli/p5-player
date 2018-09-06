@@ -1,6 +1,6 @@
 # p.play
 
-> Player for p.pack toolkits: p3, p4, and p5. 
+> Player for P5 toolkit. 
 
 ## Build Setup
 

@@ -1,0 +1,61 @@
+<v-app id="app">
+<v-toolbar app dense fixed clipped-left>
+    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    <v-toolbar-title class="app-title">P.Play</v-toolbar-title>
+    <v-btn flat>
+        Documentation
+    </v-btn>
+    <v-btn flat>
+        Examples
+    </v-btn>
+    <v-spacer></v-spacer>
+    <v-menu bottom left>
+        <v-btn
+        slot="activator"
+        icon
+        >
+        <v-icon>more_vert</v-icon>
+        </v-btn>
+        <v-list>
+        <v-list-tile>
+            <v-list-tile-title @click.stop="drawer = !drawer">Data Sets</v-list-tile-title>
+        </v-list-tile>
+        <v-list-tile>
+            <v-list-tile-title>Visualizations</v-list-tile-title>
+        </v-list-tile>
+        </v-list>
+    </v-menu>
+</v-toolbar>
+<v-content>
+    <v-container fluid fill-height class="pa-1">
+        <v-layout fill-height id="p-play-sidebar">
+        </v-layout>
+        <v-layout fill-height style="padding-top: 5px" id="p-play-spec">
+        </v-layout>
+        <v-layout fill-height id="p-play-vis">
+        <v-flex fill-height class="pa-0">
+            <v-toolbar flat dense style="border-bottom: 1px solid #aaa">
+                <v-btn color="primary" @click="run()">
+                <v-icon class="btn-icon">play_circle_outline</v-icon>
+                Run
+                </v-btn>
+                <v-btn color="primary" @click="progress()">
+                <v-icon class="btn-icon">refresh</v-icon>
+                Progress
+                </v-btn>
+                <v-spacer></v-spacer>
+            </v-toolbar>
+            <v-flex class="pa-2" id="p-play-vis-canvas">
+
+            </v-flex>
+            <StartPage></StartPage>
+        </v-flex>
+        </v-layout>
+    </v-container>
+</v-content>
+<v-footer app fixed>
+    <v-layout justify-center>
+    <span>&copy; 2018</span>
+    </v-layout>
+</v-footer>
+</v-app>
